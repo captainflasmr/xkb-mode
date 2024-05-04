@@ -1,0 +1,49 @@
+#+title: Change log of xkb-mode
+#+author: James Dyer
+#+email: captainflasmr@gmail.com
+#+language: en
+#+options: ':t toc:nil author:nil email:nil num:nil title:nil
+#+startup: showall
+
+This document contains the release notes for each tagged commit on the
+project's main git repository: [[https://github.com/captainflasmr/xkb-mode]].
+
+With a roadmap and issues also supplied.
+
+* Whats New
+
+Version 0.1.0
+
+First Version
+
+* ISSUES
+
+NONE
+
+* ROADMAP
+
+** TODO function to set latched sticky keys
+** TODO function to set locked sticky keys
+
+* Versions
+
+** 0.1.0 on <>
+
+Inception
+
+* Testing
+
+developing locally using:
+#+begin_src elisp
+(use-package xkb-mode
+   :load-path "~/repos/xkb-mode"
+#+end_src
+
+commiting to github then removing ~/.config/emacs/elpa/xkb-mode, changing emacs init to:
+
+#+begin_src elisp
+(use-package xkb-mode
+  :vc (:fetcher github :repo "captainflasmr/xkb-mode")
+#+end_src
+
+restart emacs and test

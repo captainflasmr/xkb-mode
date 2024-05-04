@@ -1,0 +1,82 @@
+#+TITLE: xkb-mode
+#+AUTHOR: James Dyer
+#+EMAIL: captainflasmr@gmail.com
+
+* Summary
+
+A Major mode for editing X Keyboard Extension (XKB) files
+
+xkb-mode is an Emacs major mode designed to facilitate the editing of XKB files, providing syntax highlighting and other useful editing features tailored specifically for XKB file format. Whether you're customizing keyboard layouts or diving into the details of X Keyboard Extension configurations, xkb-mode aims to make the task more efficient and enjoyable.
+
+** Whats New
+  Version 0.1.0
+
+  First Version
+** Screenshot
+
+#+attr_org: :width 300px
+#+attr_html: :width 100%
+[[file:img/xkb-mode-001.jpg]]
+
+* Features
+
+- Syntax highlighting for XKB-specific keywords, modifiers, and structures.
+- Custom indentation logic for XKB code blocks.
+- Auto-detection of .xkb files to automatically enable the mode.
+
+* Alternatives
+
+As far as I can tell this is the first Emacs minor mode supporting the xkb format.
+
+* Installation
+
+To install xkb-mode, you can use the following method:
+
+1. Clone the repository to your local machine:
+
+#+begin_src shell
+git clone https://github.com/captainflasmr/xkb-mode.git
+#+end_src
+
+2. Add the following to your Emacs configuration:
+
+#+begin_src emacs-lisp
+(add-to-list 'load-path "/path/to/xkb-mode/directory")
+(require 'xkb-mode)
+#+end_src
+
+Replace "/path/to/xkb-mode/directory" with the actual path to where you've cloned or downloaded xkb-mode.
+
+* Usage
+
+Opening any .xkb file with Emacs should automatically enable xkb-mode, providing you with syntax highlighting and indentation support for editing XKB files.
+
+* Customization
+
+Currently, xkb-mode provides a basic set of features optimized for general usage. Future versions may include customizable options based on user feedback.
+
+* Contributing
+
+Contributions to xkb-mode are welcome! Whether it's bug reports, feature suggestions, or code contributions, feel free to reach out or submit pull requests on GitHub.
+
+* License
+
+xkb-mode is available under the terms of the GNU General Public License v3.0. See the included LICENSE file for more details.
+
+* Contact
+
+For any questions or suggestions, please contact James Dyer at captainflasmr@gmail.com.
+
+Visit our GitHub repository: https://github.com/captainflasmr/xkb-mode for more information and updates.
+
+This README provides a concise but comprehensive overview of what the `xkb-mode` package is, how to get it installed, and how to use it, alongside encouraging community contributions and providing licensing info.
+
+* ISSUES
+  NONE
+* TODOs / ROADMAP
+  TODO function to set latched sticky keys
+
+  TODO function to set locked sticky keys
+* Testing
+
+See CHANGELOG.org
