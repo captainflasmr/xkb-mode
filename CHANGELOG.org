@@ -12,9 +12,12 @@ With a roadmap and issues also supplied.
 
 * Whats New
 
-Version 0.1.0
+Version 0.2.0
 
-First Version
+- Correct version from 0.6.0 to 0.2.0 to reflect the actual stage of development.
+- Remove the 'Alternatives' section, streamlining the introduction.
+- Improve code formatting for better readability and maintenance. This includes more consistent use of newlines and arrangement of font lock faces.
+- Use `#'` prefix for function symbols as a best practice, explicitly marking `xkb-indent-line` as a function, enhancing code clarity.
 
 * ISSUES
 
@@ -22,12 +25,13 @@ NONE
 
 * ROADMAP
 
-** TODO function to set latched sticky keys
-** TODO function to set locked sticky keys
+** TODO function to set xkb file to latched sticky keys
+** TODO function to set xkb file locked sticky keys
+** TODO function to map RAlt to Ctrl
 
 * Versions
 
-** 0.1.0 on <>
+** 0.1.0 on <2024-05-05 Sun>
 
 Inception
 

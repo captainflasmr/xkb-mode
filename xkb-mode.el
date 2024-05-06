@@ -1,7 +1,7 @@
 ;;; xkb-mode.el --- Major mode for editing X Keyboard Extension (XKB) files
 ;;
 ;; Author: James Dyer <captainflasmr@gmail.com>
-;; Version: 0.6.0
+;; Version: 0.1.0
 ;; Package-Requires: ((emacs "25.1"))
 ;; Keywords: convenience
 ;; URL: https://github.com/captainflasmr/xkb-mode
@@ -25,9 +25,6 @@
 ;; xkb-mode provides syntax highlighting and other editing features
 ;; for working with XKB files.
 ;;
-;;; Alternatives.
-;;
-;; As far as I can tell this is the first Emacs minor mode supporting the xkb format.
 
 ;;; Code:
 
@@ -78,7 +75,9 @@
         (,(regexp-opt '("xkb_keycodes" "xkb_keymap" "xkb_types" "xkb_compatibility" "xkb_symbols" "xkb_geometry"
                          "useModMapMods" "virtual_modifiers" "type" "interpret" "action" "include" "name" "group"
                          "indicator" "modifiers" "map" "level_name" "alias" "key" "modifier_map"
-                         "virtualModifier" "preserve" "repeat" "symbols" "virtual" "section") 'words) . font-lock-keyword-face)
+                         "virtualModifier" "preserve" "repeat" "symbols" "virtual" "section")
+            'words)
+          . font-lock-keyword-face)
         ;; Function names and important identifiers
         (,(regexp-opt '("AnyOf" "AllOf" "NoneOf" "AnyOfOrNone" "LatchMods" "LockMods" "SetMods"
                          "LatchGroup" "LockGroup" "SetGroup" "MovePtr" "PtrBtn" "LockPtrBtn"
@@ -87,7 +86,9 @@
                          "SetControls" "LockControls" "ActionMessage" "RedirectKey" "DeviceBtn" "LockDeviceBtn"
                          "AccessX" "Terminate" "SwitchScreen" "SetModMap" "SetExplicit" "ModMap" "VirtualMods"
                          "Interpret" "SymInterp" "vmods" "type" "key" "overlay1" "overlay2"
-                         "outline" "solid" "text" "row" "keys" "keyType") 'words) . font-lock-function-name-face)
+                         "outline" "solid" "text" "row" "keys" "keyType")
+            'words)
+          . font-lock-function-name-face)
         ;; Pattern to match type declarations like 'type= "FOUR_LEVEL"'
         ("\\<type\\s-*=\\s-*\"\\([^\"]*\\)\"" 1 font-lock-type-face)
         ;; Pattern to highlight the symbols specification, capturing the property name and its list value
@@ -117,7 +118,9 @@
                            "Print" "Sys_Req" "Linefeed" "Home" "Up" "Prior"
                            "Left" "Right" "End" "Down" "Next" "Insert" "Delete"
                            "NumLock" "CapsLock" "ScrollLock" "ShiftLock"
-                           "Num_Lock" "Caps_Lock" "Scroll_Lock" "space") 'words)) . font-lock-constant-face)
+                           "Num_Lock" "Caps_Lock" "Scroll_Lock" "space")
+              'words))
+          . font-lock-constant-face)
         ;; Special strings and constants
         ("\\(\"[^\"]+\"\\)" . font-lock-string-face)
         ;; Key names (e.g., <ESC>, <AE01>, etc.), potentially a large range so kept broad
@@ -126,13 +129,14 @@
             "\\<[<>A-Za-z0-9]+\\>\\|"
             "symbols\\|"
             "type\\"
-            ")\\>") . font-lock-variable-name-face))))
+            ")\\>")
+          . font-lock-variable-name-face))))
   ;; Comments
   (setq comment-start "#")
   (setq comment-end "")
   ;; Indentation
   (setq indent-tabs-mode nil)
-  (setq indent-line-function 'xkb-indent-line)
+  (setq indent-line-function #'xkb-indent-line)
   ;; Key bindings
   ;; Here we could add key bindings specific to XKB editing if necessary
   )
