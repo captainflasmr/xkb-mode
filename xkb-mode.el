@@ -70,7 +70,7 @@
   (setq font-lock-defaults
     `((
         ;; Comments
-        ("\\(#.*\\)" . font-lock-comment-face)
+        ("\\(\\(#\\|//\\).*\\)" . font-lock-comment-face)
         ;; Keywords and Sections
         (,(regexp-opt '("xkb_keycodes" "xkb_keymap" "xkb_types" "xkb_compatibility" "xkb_symbols" "xkb_geometry"
                          "useModMapMods" "virtual_modifiers" "type" "interpret" "action" "include" "name" "group"
